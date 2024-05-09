@@ -5,9 +5,15 @@
 
     ul {
         display: flex;
+
         li {
             margin-left: 50px;
             font-weight: 500;
+
+            a {
+                text-decoration: none;
+                color: #000;
+            }
         }
     }
 }

@@ -1,0 +1,10 @@
+.locationCard {
+    width: 340px;
+    height: 340px;
+    background-color: var(--primary);
+    margin: 25px 30px;
+
+    &::before {
+        background: linear-gradient(rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    }
+}

@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <div className="d-flex flex-column mainContainer">
       <Header />
       <Content />
-      <Footer />
     </div>
+    <Footer />
   </React.StrictMode>
 );
