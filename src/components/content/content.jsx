@@ -1,5 +1,5 @@
-import style from "../assets/styles/Content.module.scss";
-import LocationCard from "./LocationCard";
+import style from "./content.module.scss";
+import LocationCard from "../location-card/location-card";
 
 export default function Content() {
   return (

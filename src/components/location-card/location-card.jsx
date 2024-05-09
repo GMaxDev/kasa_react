@@ -1,4 +1,4 @@
-import style from "../assets/styles/LocationCard.module.scss";
+import style from "./location-card.module.scss";
 
 export default function LocationCard() {
   return (
