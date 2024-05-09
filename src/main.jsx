@@ -1,9 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './assets/styles/index.scss'
+import Header from "./components/Header";
+import Content from "./components/Content";
+import Footer from "./components/Footer";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./assets/styles/index.scss";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <h1>test</h1>
-  </React.StrictMode>,
-)
+    <div className="d-flex flex-column mainContainer">
+      <Header />
+      <Content />
+      <Footer />
+    </div>
+  </React.StrictMode>
+);
