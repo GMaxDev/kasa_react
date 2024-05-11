@@ -15,7 +15,7 @@
   width: 100%;
   border-radius: 25px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  background-image: url(/src/img/banner_bg.jpg);
+  background-image: url(/src/img/about_bg.jpg);
   background-position: center;
   background-size: cover;
 
@@ -29,24 +29,4 @@
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.6);
   }
-}
-
-h1 {
-  z-index: 1;
-  margin: 0 16px;
-  color: #fff;
-  font-size: 48px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 4px 4px 4px rgba(0, 0, 0, 0.25);;
-}
-
-.cardZone {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 43px;
-
-  padding: 25px;
-  width: 100%;
-  height: auto;
-  border-radius: 25px;
-  background-color: var(--gray);
 }

@@ -8,12 +8,11 @@ export default function Content() {
         <h1>Chez vous, partout et ailleurs</h1>
       </div>
       <div className={`${style.cardZone}`}>
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
-        <LocationCard />
+        <LocationCard locationTitle="Titre de la location" />
+        <LocationCard locationTitle="tata" />
+        <LocationCard locationTitle="maison des fous" />
+        <LocationCard locationTitle="charlie" />
+        <LocationCard locationTitle="toto" />
       </div>
     </div>
   );

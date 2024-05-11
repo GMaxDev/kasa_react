@@ -1,0 +1,39 @@
+.titleZone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 30px 0 0;
+  height: 54px;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0 15px;
+  border-radius: 5px;
+}
+
+p {
+  position: relative;
+  margin: 0;
+  background-color: var(--gray);
+  border-radius: 5px;
+  line-height: 25px;
+  z-index: -1;
+  height: 0px;
+  padding: 0;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.textTranslate {
+  padding: 20px;
+  height: auto;
+  opacity: 1;
+}
+
+.arrow {
+  /* Styles de la flèche */
+  transition: transform 0.3s ease;
+}
+
+.arrowRotated {
+  transform: rotate(180deg); /* Rotation de 180 degrés */
+}
