@@ -1,19 +1,33 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    ul {
-        display: flex;
+    li {
+      margin-left: 50px;
+      font-weight: 500;
 
-        li {
-            margin-left: 50px;
-            font-weight: 500;
-
-            a {
-                text-decoration: none;
-                color: #000;
-            }
-        }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
     }
+  }
+}
+
+.active {
+  position: relative;
+
+  &::after {
+    content: ""; /* Ajoute un élément pseudo-élément pour créer le soulignement */
+    position: absolute; /* Positionne le soulignement par rapport à l'élément parent */
+    left: 0; /* Déplace le soulignement pour qu'il commence depuis le bord gauche de l'élément parent */
+    bottom: 0px; /* Déplace le soulignement vers le bas par rapport à l'élément parent */
+    width: 100%; /* Étend le soulignement sur toute la largeur de l'élément parent */
+    height: 1px; /* Définit l'épaisseur du soulignement */
+    background-color: #000; /* Couleur du soulignement */
+  }
 }

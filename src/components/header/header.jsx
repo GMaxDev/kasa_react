@@ -1,13 +1,19 @@
 import style from "./header.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
+  const location = useLocation();
+
   return (
     <div className={`${style.header}`}>
       <img src="/src/img/LOGO.svg" alt="kasa logo" />
       <ul>
-        <li><Link to="/">Accueil</Link></li>
-        <li><Link to="/about">A Propos</Link></li>
+        <li className={location.pathname === "/" ? style.active : ""}>
+          <Link to="/">Accueil</Link>
+        </li>
+        <li className={location.pathname === "/about" ? style.active : ""}>
+          <Link to="/about">A Propos</Link>
+        </li>
       </ul>
     </div>
   );
