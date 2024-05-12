@@ -1,7 +1,7 @@
 import { useState } from "react";
-import style from "./about-content-bloc.module.scss";
+import style from "./data-content-bloc.module.scss";
 
-export default function AboutContentBloc({ titleBloc, contentBloc }) {
+export default function DataContentBloc({ titleBloc, contentBloc }) {
   const [isArrowRotated, setIsArrowRotated] = useState(false);
 
   const handleArrowClick = () => setIsArrowRotated(!isArrowRotated);
