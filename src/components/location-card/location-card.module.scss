@@ -6,6 +6,7 @@
   height: 0;
   padding-bottom: 100%;
   border-radius: 10px;
+  overflow: hidden;
 
   &:after {
     content: "";
@@ -22,6 +23,10 @@
     );
   }
 
+  &:hover {
+    cursor: grab;
+  }
+
   img {
     position: absolute;
     top: 0;
@@ -30,6 +35,11 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    transition: 0.1s ease-in-out;
+  }
+
+  &:hover img {
+    transform: scale(1.05); /* Applique une échelle de 110% à l'image lors du survol de la carte */
   }
 
   h3 {
