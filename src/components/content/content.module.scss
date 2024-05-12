@@ -1,3 +1,5 @@
+@use "../../assets/styles/mixins" as mixin;
+
 .content {
   display: flex;
   justify-content: center;
@@ -36,17 +38,48 @@ h1 {
   margin: 0 16px;
   color: #fff;
   font-size: 48px;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 4px 4px 4px rgba(0, 0, 0, 0.25);;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000, 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .cardZone {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin-top: 43px;
-
+  gap: 30px;
   padding: 25px;
   width: 100%;
   height: auto;
   border-radius: 25px;
   background-color: var(--gray);
+  justify-content: center;
+}
+
+@include mixin.lg-lt {
+  .cardZone {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include mixin.sm-lt {
+  .banner {
+    height: 111px;
+    justify-content: start;
+
+    h1 {
+      font-size: 20px;
+      text-shadow: initial;
+      width: 190px;
+    }
+  }
+  .cardZone {
+    margin-top: 20px;
+    padding: 0;
+    background-color: initial;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .content {
+    margin-bottom: 0;
+  }
 }
