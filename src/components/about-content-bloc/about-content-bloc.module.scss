@@ -1,8 +1,10 @@
+@use "../../assets//styles/mixins" as mixin;
+
 .titleZone {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 30px 0 0;
+  margin-top: 30px;
   height: 54px;
   background-color: var(--primary);
   color: #fff;
@@ -36,4 +38,16 @@ p {
 
 .arrowRotated {
   transform: rotate(180deg); /* Rotation de 180 degrés */
+}
+
+@include mixin.sm-lt {
+  .titleZone {
+    margin-top: 20px;
+    height: 30px;
+  }
+
+  .textTranslate {
+    font-size: 12px;
+    padding: 10px;
+  }
 }

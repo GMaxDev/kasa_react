@@ -3,7 +3,12 @@
 @use "./flex";
 @use "./utils";
 @use "./debug";
+@use '../../assets//styles/mixins' as mixin;
 
 .mainContainer {
   margin: 45px 100px 0;
+
+  @include mixin.sm-lt {
+    margin: 20px 20px 0;
+  }
 }

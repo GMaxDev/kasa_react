@@ -1,3 +1,5 @@
+@use "../../assets//styles/mixins" as mixin;
+
 .content {
   display: flex;
   justify-content: center;
@@ -28,5 +30,11 @@
     height: 100%;
     border-radius: 25px;
     background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+@include mixin.sm-lt {
+  .banner {
+    height: 111px;
   }
 }
