@@ -11,20 +11,20 @@ export default function DataContentBloc({ titleBloc, contentBloc }) {
       <div className={style.titleZone} onClick={handleArrowClick}>
         <h2>{titleBloc}</h2>
         <img
-          src="./src/img/arrow.svg"
+          src="../../src/img/arrow.svg"
           alt="Flèche"
           className={`${style.arrow} ${
             isArrowRotated ? style.arrowRotated : ""
           }`}
         />
       </div>
-      <p
+      <div
         className={`${style.arrow} ${
           isArrowRotated ? style.textTranslate : ""
-        }`}
+        } ${style.contentBlocZone}`}
       >
         {contentBloc}
-      </p>
+      </div>
     </div>
   );
 }
