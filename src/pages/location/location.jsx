@@ -13,34 +13,41 @@ export default function Location() {
   return (
     <div className="mainContainer">
       <div className={style.carroussel}></div>
-      <div className={style.titleLocationTagBloc}>
-        <h1>{dataLocation.title}</h1>
-        <h2>{dataLocation.location}</h2>
-        <div className={style.tagZone}>
-          <ul>
-            {dataLocation.tags.map((tag) => (
-              <li key={tag}>{tag}</li>
+      <div className={style.mainData}>
+        <div className={style.titleLocationTagBloc}>
+          <h1>{dataLocation.title}</h1>
+          <h2>{dataLocation.location}</h2>
+          <div className={style.tagZone}>
+            <ul>
+              {dataLocation.tags.map((tag) => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className={style.profilRatingZone}>
+          <div className={style.profil}>
+            <h3>{dataLocation.host.name}</h3>
+            <img
+              src={dataLocation.host.picture}
+              alt={`Photo de profil de ${dataLocation.host.name}`}
+            />
+          </div>
+          <div className={style.rating}>
+            {Array.from({ length: rating }, (_, index) => (
+              <p key={index}>0</p>
             ))}
-          </ul>
-        </div>
-      </div>
-      <div className={style.profilRatingZone}>
-        <div className={style.profil}>
-          <h3>{dataLocation.host.name}</h3>
-          <img
-            src={dataLocation.host.picture}
-            alt={`Photo de profil de ${dataLocation.host.name}`}
-          />
-        </div>
-        <div className={style.rating}>
-          {Array.from({ length: rating }, (_, index) => (
-            <p key={index}>0</p>
-          ))}
+          </div>
         </div>
       </div>
       <div className={style.dataZone}>
-        <DataContentBloc titleBloc="Description" contentBloc={dataLocation.description} />
         <DataContentBloc
+          className={style.dataContent}
+          titleBloc="Description"
+          contentBloc={dataLocation.description}
+        />
+        <DataContentBloc
+          className={style.dataContent}
           titleBloc="Equipements"
           contentBloc={dataLocation.equipments.map((info) => (
             <p key={info}>{info}</p>
