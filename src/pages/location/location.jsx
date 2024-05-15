@@ -28,24 +28,28 @@ export default function Location() {
   return (
     <>
       <div className={style.carroussel}>
-        <div className={style.arrowCarroussel}>
-          <img
-            className={`${style.arrow} ${style.arrowLeft}`}
-            src="/src/img/arrow.svg"
-            alt="Flêche gauche"
-            onClick={goToPreviousPicture}
-          />
-          <img
-            className={`${style.arrow} ${style.arrowRight}`}
-            src="/src/img/arrow.svg"
-            alt="Flêche droite"
-            onClick={goToNextPicture}
-          />
-        </div>
+        {allPictures.length > 1 && (
+          <div className={style.arrowCarroussel}>
+            <img
+              className={`${style.arrow} ${style.arrowLeft}`}
+              src="/src/img/arrow.svg"
+              alt="Flêche gauche"
+              onClick={goToPreviousPicture}
+            />
+            <img
+              className={`${style.arrow} ${style.arrowRight}`}
+              src="/src/img/arrow.svg"
+              alt="Flêche droite"
+              onClick={goToNextPicture}
+            />
+          </div>
+        )}
         <img src={allPictures[currentPictureIndex]} alt="" />
-        <p>
-          {currentPictureIndex + 1}/{allPictures.length}
-        </p>
+        {allPictures.length > 1 && (
+          <p>
+            {currentPictureIndex + 1}/{allPictures.length}
+          </p>
+        )}
       </div>
       <div className={style.mainData}>
         <div className={style.titleLocationTagBloc}>
