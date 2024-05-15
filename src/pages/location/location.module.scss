@@ -1,8 +1,53 @@
 @use "../../assets/styles/mixins" as mixin;
 
 .carroussel {
+  margin: 50px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 415px;
+  overflow: hidden;
+  align-items: center;
+  border-radius: 25px;
+
+  .arrowCarroussel {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; // Pour espacer les flèches
+
+    z-index: 1;
+
+    .arrow {
+      height: 20px;
+      width: 70px;
+      cursor: grab;
+    }
+
+    .arrowLeft {
+      transform: rotate(-90deg) scale(2.5);
+    }
+
+    .arrowRight {
+      transform: rotate(90deg) scale(2.5);
+    }
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  p {
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+  }
 }
 
 .mainData {
@@ -45,6 +90,7 @@
   .profilRatingZone {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: end;
 
     .profil {
@@ -69,6 +115,18 @@
 
     .rating {
       display: flex;
+      position: relative;
+
+      .sizeStar {
+        font-size: 24px;
+      }
+      .grayStar {
+        color: #e3e3e3;
+      }
+
+      .coloredStar {
+        color: var(--primary);
+      }
     }
   }
 }
@@ -78,4 +136,96 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 76px;
   margin-bottom: 50px;
+}
+
+@include mixin.sm-lt {
+  .carroussel {
+    height: 255px;
+    border-radius: 10px;
+    margin: 30px 0 10px;
+
+    .arrowCarroussel {
+      transform: translateY(-10px);
+
+      .arrow {
+        height: 15px;
+        width: 40px;
+      }
+
+      .arrowLeft {
+        transform: rotate(-90deg) scale(1);
+      }
+
+      .arrowRight {
+        transform: rotate(90deg) scale(1);
+      }
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+
+    p {
+    }
+  }
+
+  .mainData {
+    flex-direction: column;
+
+    .titleLocationTagBloc {
+      h1 {
+        font-size: 18px;
+      }
+
+      h2 {
+        font-size: 14px;
+      }
+
+      .tagZone {
+        margin: 10px 0;
+
+        ul {
+          display: flex;
+
+          li {
+            font-size: 10px;
+            padding: 3px 10px;
+            margin: 0 10px 0 0 !important;
+          }
+        }
+      }
+    }
+
+    .profilRatingZone {
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+
+      .profil {
+        width: 140px;
+
+        h3 {
+          font-size: 12px;
+        }
+
+        img {
+          height: 32px;
+        }
+      }
+
+      .rating {
+        .sizeStar {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .dataZone {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: initial;
+  }
 }

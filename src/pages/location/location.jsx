@@ -9,10 +9,27 @@ export default function Location() {
   console.log(dataLocation);
 
   const rating = parseInt(dataLocation.rating);
+  const allPictures = dataLocation.pictures.map((data) => data);
+  console.log(allPictures);
 
   return (
-    <div className="mainContainer">
-      <div className={style.carroussel}></div>
+    <>
+      <div className={style.carroussel}>
+        <div className={style.arrowCarroussel}>
+          <img
+            className={`${style.arrow} ${style.arrowLeft}`}
+            src="/src/img/arrow.svg"
+            alt=""
+          />
+          <img
+            className={`${style.arrow} ${style.arrowRight}`}
+            src="/src/img/arrow.svg"
+            alt=""
+          />
+        </div>
+        <img src={allPictures[0]} alt="" />
+        <p>{allPictures.length}</p>
+      </div>
       <div className={style.mainData}>
         <div className={style.titleLocationTagBloc}>
           <h1>{dataLocation.title}</h1>
@@ -34,8 +51,11 @@ export default function Location() {
             />
           </div>
           <div className={style.rating}>
-            {Array.from({ length: rating }, (_, index) => (
-              <p key={index}>0</p>
+            {Array.from({ length: 5 }, (_, index) => (
+              <i
+                key={index}
+                className={`${style.sizeStar} fa-solid fa-star ${index < rating ? style.coloredStar : style.grayStar}`}
+              ></i>
             ))}
           </div>
         </div>
@@ -54,6 +74,6 @@ export default function Location() {
           ))}
         />
       </div>
-    </div>
+    </>
   );
 }
