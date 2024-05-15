@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import DataContentBloc from "../../components/data-content-bloc/data-content-bloc";
 import locationInfo from "../../data/logements.json";
@@ -10,7 +11,19 @@ export default function Location() {
 
   const rating = parseInt(dataLocation.rating);
   const allPictures = dataLocation.pictures.map((data) => data);
-  console.log(allPictures);
+  console.log(dataLocation.pictures);
+
+  const [currentPictureIndex, setCurrentPictureIndex] = useState(0);
+  const goToNextPicture = () => {
+    setCurrentPictureIndex((prevIndex) =>
+      prevIndex === allPictures.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+  const goToPreviousPicture = () => {
+    setCurrentPictureIndex((prevIndex) =>
+      prevIndex === 0 ? allPictures.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
     <>
@@ -19,16 +32,20 @@ export default function Location() {
           <img
             className={`${style.arrow} ${style.arrowLeft}`}
             src="/src/img/arrow.svg"
-            alt=""
+            alt="Flêche gauche"
+            onClick={goToPreviousPicture}
           />
           <img
             className={`${style.arrow} ${style.arrowRight}`}
             src="/src/img/arrow.svg"
-            alt=""
+            alt="Flêche droite"
+            onClick={goToNextPicture}
           />
         </div>
-        <img src={allPictures[0]} alt="" />
-        <p>{allPictures.length}</p>
+        <img src={allPictures[currentPictureIndex]} alt="" />
+        <p>
+          {currentPictureIndex + 1}/{allPictures.length}
+        </p>
       </div>
       <div className={style.mainData}>
         <div className={style.titleLocationTagBloc}>
@@ -54,7 +71,9 @@ export default function Location() {
             {Array.from({ length: 5 }, (_, index) => (
               <i
                 key={index}
-                className={`${style.sizeStar} fa-solid fa-star ${index < rating ? style.coloredStar : style.grayStar}`}
+                className={`${style.sizeStar} fa-solid fa-star ${
+                  index < rating ? style.coloredStar : style.grayStar
+                }`}
               ></i>
             ))}
           </div>
