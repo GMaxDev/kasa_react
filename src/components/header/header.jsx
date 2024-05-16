@@ -6,7 +6,7 @@ export default function Header() {
 
   return (
     <div className={`${style.header}`}>
-      <img className={style.logo} src="/src/img/LOGO.svg" alt="kasa logo" />
+      <img className={style.logo} src="src/img/LOGO.svg" alt="kasa logo" />
       <ul>
         <li className={location.pathname === "/" ? style.active : ""}>
           <Link to="/">Accueil</Link>
