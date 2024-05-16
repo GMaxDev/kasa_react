@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import DataContentBloc from "../../components/data-content-bloc/data-content-bloc";
 import locationInfo from "../../data/logements.json";
@@ -7,11 +7,9 @@ import style from "./location.module.scss";
 export default function Location() {
   const { id } = useParams(); // On récupère l'ID
   const dataLocation = locationInfo.find((item) => item.id === id);
-  console.log(dataLocation);
 
   const rating = parseInt(dataLocation.rating);
   const allPictures = dataLocation.pictures.map((data) => data);
-  console.log(dataLocation.pictures);
 
   const [currentPictureIndex, setCurrentPictureIndex] = useState(0);
   const goToNextPicture = () => {
