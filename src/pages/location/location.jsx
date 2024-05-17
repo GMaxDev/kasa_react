@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import DataContentBloc from "../../components/data-content-bloc/data-content-bloc";
 import locationInfo from "../../data/logements.json";
 import style from "./location.module.scss";
+import arrow from "../../img/arrow.svg";
 
 export default function Location() {
   const { id } = useParams(); // On récupère l'ID
@@ -30,13 +31,13 @@ export default function Location() {
           <div className={style.arrowCarroussel}>
             <img
               className={`${style.arrow} ${style.arrowLeft}`}
-              src="/src/img/arrow.svg"
+              src={arrow}
               alt="Flêche gauche"
               onClick={goToPreviousPicture}
             />
             <img
               className={`${style.arrow} ${style.arrowRight}`}
-              src="/src/img/arrow.svg"
+              src={arrow}
               alt="Flêche droite"
               onClick={goToNextPicture}
             />

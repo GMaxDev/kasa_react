@@ -1,5 +1,6 @@
 import { useState } from "react";
 import style from "./data-content-bloc.module.scss";
+import arrow from "../../img/arrow.svg";
 
 export default function DataContentBloc({ titleBloc, contentBloc }) {
   const [isArrowRotated, setIsArrowRotated] = useState(false);
@@ -11,7 +12,7 @@ export default function DataContentBloc({ titleBloc, contentBloc }) {
       <div className={style.titleZone} onClick={handleArrowClick}>
         <h2>{titleBloc}</h2>
         <img
-          src="src/img/arrow.svg"
+          src={arrow}
           alt="Flèche"
           className={`${style.arrow} ${isArrowRotated ? style.arrowRotated : ""}`}
         />
